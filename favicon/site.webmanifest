@@ -1,0 +1,21 @@
+{
+    "name": "Alessandro Uva Portfolio",
+    "short_name": "AU Portfolio",
+    "description": "Portfolio e collegamenti professionali di Alessandro Uva",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#e9f5f3",
+    "theme_color": "#17746a",
+    "icons": [
+        {
+            "src": "/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

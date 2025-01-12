@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio personale di Alessandro Uva, Web Developer ed Esperto di Accessibilità Digitale">
+    <meta name="theme-color" content="#17746a">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <title>Alessandro Uva - Web Developer & Accessibility Expert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
+    <button 
+        id="accessibilityToggle" 
+        class="accessibility-toggle" 
+        aria-expanded="false"
+        aria-controls="accessibilityMenu"
+        aria-label="Apri menu accessibilità">
+        <span class="icon" aria-hidden="true">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFbklEQVR4nO2a7YsXVRTH96ebaynZamXgFluUrg9sUqlB70vLzTZfadkLcdt9oy5bEBU+RRJZEFRC/QOKWG9SC4MsJcJl3R7e5MOmlrkrlFoGpaLxibN9b5ydZuY3M7+fbYoHBmbm3PM055x7zz13amquwhUKwHjgMeA1YAdwADgNnNdl9/uFszELgPqa/wMAo4ElwMfAn+SHi8BO4EmgbjgMuBZ4BhhwSp0DdgGr5Jmp9sWBa3TV653hVgOfiiZAP9BlH+e/MuIR4LBToAdYBowrwOsGoA3Y5/h9B8y71GH0jhPYCzxYRf5zga8c/41V9w5wixQ3+B1YDowsQ9MAbAV+0/U+cFcZmpHASuAP5+2J1TLidrkbzTozMtCYEadiktveTcpA3wwcFE2f6VANTwQjvrApNiOdecJgmymua7vebcnIYwKw1xkzsZKc6HVGjMlBa6GE//rArXr3aw4+Y5wxPYVyxiX2/qyecLRnRNtQiSHOMyHMNtYUmGJDYpfNiRh6S2wUTg26bEU32FqAX7ObAObmWezCOrE8r1DxmAycTEj2Owvy7HT5Uj7EgGdF0BudYoHbgBeBF4D7gVIKH0vwLQqzM5oAEo0wXvzN0/g/58NS+Frga+nWmSXBQ9kxZLED7oiZUr8HXgfmpBlVRvk54mG8PPwcY8w84Y6n1mYq3gZniBjcWuF2A2+JWdQoq2pnZzBgtsZGlT8u3nv0vCbG8DCTLk4TYFWswbIY3DrhrFqdBowAHgDeAI5RHI6Jh/EaId474wyRHu3CfZS2n7ioinRcwgr/i1PgS1XAk1yI2Fc+mkH5oxo7GJLiYbyMZwCT1RijR732NxdiC1WV1wa7UjzWCLyrTVIA24d8Aiy1ajbR3fGV71LR+r3MacloTKH9TGMfjUNawhmsyqBEHdAKvAecdUqc1buFKbQLU+has2ywXL5uiEPuSLQynek44CnVVebuQUgZ7z35uardG3PKbBWPD+KQh4ScmodphEdDDkMaKpAzXTwOxCHDGpGrrkpStCg+C5gHxeanOKTNBAajLgND6sTm3BVtyKnLKLRuSgutipM9TlFgLHBdEv5SJPt2IRdUIKDkFdXzYX2kUmTWKlUgpzVt+g0L4uoKBDSJxwk9z3KKz9S7E3puqkDO2rQFsWyJkkFAh3hs1rPVUwHW691mPbdXIGe3eMyvSSjGQtGYuWaK8AhKdiisjjhD+uKMLSBjvCsar08aFMrntoJCwqasyYXVEWfQPS78BgrK6BD9h2mDntCgfQUETAn5IW9sCHHs7l8RLuTJlJwySq7UX1RuoQk7v4dyCmmP5EdoYNznvHNYyoQQfDqnjPmi+7FslazWPrI8tb8bodvk8sOHVSmSL/e68NiUg38t8I3oVmQhGO3apCtzCOp3+fFPWDl8ePeqy5P+HPy7RHMw86GQ61ZYU6w5Yx/L50f4+rPcmKiXQp5MzsB/ptuI5TvK0PlE+AITyoxtC/kRVdiNGWKgy5O2DHVVn8a+mcsIF2LWOEaN5MQmNvCSxr0MvB0Nq5jwspbPet2vS+E7FujWuO7C54zWyndfY2+SZ4AWhoJtY6clFHvRQ9OHUzzRrTFWq91cyIhIG6jPhdndMWMsbJ7XgviDNfpS+C1RL2tArdFSQk70OSMSOypFPNPjJgBrKNdWhfm/p9gul9jdFXsiIWfCBIAaylU5fZVH7SgjrBODiX1Jz951+hrcjnqx7UX+YlAB2BHpMB6q5mlxFu90RhrZ51Ver9HGZ7pOm0bpsvsZwOMas9v1CULZsWK4/oCw2myxNZS1BcgLF9QYXDQsBqR0HFu0VmzT2eNJ91ON3X9r21ONaUncT1yFmssf/gLdyiTp49OaXAAAAABJRU5ErkJggg==" 
+                 alt="" 
+                 role="presentation" 
+                 width="32" 
+                 height="32">
+        </span>
+    </button>
+
+    <div id="accessibilityMenu" 
+         class="accessibility-menu" 
+         role="dialog" 
+         aria-labelledby="accessibility-title"
+         hidden>
+        <h2 id="accessibility-title">Impostazioni Accessibilità</h2>
+        
+        <div class="setting-group" role="group" aria-labelledby="text-size">
+            <h3 id="text-size">Dimensione Testo</h3>
+            <div class="controls">
+                <button class="control-btn" 
+                        data-action="decreaseFont"
+                        aria-label="Diminuisci dimensione testo">
+                    <span class="btn-icon" aria-hidden="true">A-</span>
+                    <span class="btn-text">Diminuisci font</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="increaseFont"
+                        aria-label="Aumenta dimensione testo">
+                    <span class="btn-icon" aria-hidden="true">A+</span>
+                    <span class="btn-text">Aumenta font</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="resetFont"
+                        aria-label="Ripristina dimensione testo predefinita">
+                    <span class="btn-icon" aria-hidden="true">A</span>
+                    <span class="btn-text">Reset font</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="setting-group" role="group" aria-labelledby="contrast">
+            <h3 id="contrast">Contrasto</h3>
+            <div class="controls">
+                <button class="control-btn" 
+                        data-action="highContrast"
+                        aria-pressed="false">
+                    <span class="btn-icon" aria-hidden="true">🌗</span>
+                    <span class="btn-text">Alto Contrasto</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="normalContrast"
+                        aria-pressed="true">
+                    <span class="btn-icon" aria-hidden="true">🌓</span>
+                    <span class="btn-text">Contrasto Normale</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="setting-group" role="group" aria-labelledby="reading-mode">
+            <h3 id="reading-mode">Modalità Lettura</h3>
+            <div class="controls">
+                <button class="control-btn" 
+                        data-action="dyslexicFont"
+                        aria-pressed="false">
+                    <span class="btn-icon" aria-hidden="true">📖</span>
+                    <span class="btn-text">Font Dislessia</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="normalFont"
+                        aria-pressed="true">
+                    <span class="btn-icon" aria-hidden="true">📝</span>
+                    <span class="btn-text">Font Standard</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="setting-group" role="group" aria-labelledby="color-blind">
+            <h3 id="color-blind">Daltonismo</h3>
+            <div class="controls">
+                <button class="control-btn" 
+                        data-action="protanopia"
+                        aria-pressed="false">
+                    <span class="btn-icon" aria-hidden="true">👁️</span>
+                    <span class="btn-text">Protanopia</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="deuteranopia"
+                        aria-pressed="false">
+                    <span class="btn-icon" aria-hidden="true">👁️</span>
+                    <span class="btn-text">Deuteranopia</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="tritanopia"
+                        aria-pressed="false">
+                    <span class="btn-icon" aria-hidden="true">👁️</span>
+                    <span class="btn-text">Tritanopia</span>
+                </button>
+                <button class="control-btn" 
+                        data-action="normalColor"
+                        aria-pressed="true">
+                    <span class="btn-icon" aria-hidden="true">🎨</span>
+                    <span class="btn-text">Colori Normali</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <div class="container">
+            <header role="banner">
+                <h1>Alessandro Uva</h1>
+                <p>Web Developer & Digital Accessibility Expert</p>
+            </header>
+
+            <nav class="links" aria-label="Collegamenti professionali">
+                <ul>
+                    <li>
+                        <a href="https://github.com/Alex-Uva89" 
+                           class="link-card"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="icon" aria-hidden="true">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADtklEQVR4nO2ZSWgVQRCGP2OCS3CJYoy7uCtiDi6o8aAIikvQi4oGvCiiRo2E6FXJQdxQg4LgUTx4cyPuHhVRD0bcsyDu4IJrTNTnSEMNPOfNm1czb2YSJD8UDNNT1fV3V1dX90AH/l8UAEuBfUAt8Bj4CLSKmOdH0ma+WQL0pp2gC1AGXAJ+A5ZPMToXgFViK3Z0AyqBVwGcTycvga1A17hILAAaQiTglHpgfpQEzNTXREjAKcdl5kNFf+BOjCQskVtAYVgkhst0W20kT8WHrNBP0qjVxtIAFAUl0bWNwsnyCLNAKfpoO3DecsjhICnWy+B2CbspwA7gWRbOmd1+G1As1cGBDN/P05LoptgnBruEoSH0A7gKVACzgNFAvsgYebcROAN8BTYDnR22ihWLXxVilYpRTLf75mlHy+PbAYr+zUB5oouy7Ah9o0pCkaL/F5lmpUwZ1+MiJFKi9GGll5FLSiPLIyRSrvThfDoDBT5K8eoIiRxT+vAL6OlmYKnSwGdZkFFhPPBT6Uupm4H9SmWT56PGSaUve92Ua5XK02Igskzpy1k35afKuMyNgchYJRFT0KbgvULRfBMHhiiJvHNTblUomm86xUBkoiMKPor8cfjT4qZsZ4rZUu+MAPoAA+XZljiIJCNXtoYC6dtUFYOSBjYFn6TxJnAXaJRQeiPPtqwgehz2iIrvScvAzFIKnkjjNUmxWyRPm4p1khw37VGJGjnS11BggmTKRVI575a7MPsIkIKL0rhLqsuDwCngOlAns/FBpnN1xLPRIqPdBDwAbgPngCNyFtrvVaZUKzOFkW8yU2FjncuC9pKdbkbm+jBgpBlYE1KomZJ8j08SRua4GeuuTMFOuSFryXnS0yBfBqMxQL8tXucie504xZxT1soGlM7wW+AEsEFGaiTQK8l2XznHmOvQKikvvgYgYImYkiotSj1SXomcwd8qw65KbihtFMq75iyct5JkYaa015RGsU7apwJfMpAwpNOhJAQy9eKLJyo8DJhcbpcQFyU07J84z4ErwOJMHQDrsyRSrr3duBckLn0gx6MPK4Pc9VOBzwQSLkYSIe4fGwKQSADT/XZ0JI2xT3KxNlgTpx4YFYBITZCO8qTu8tNRZ5/2/di+7PMC8B/09BnLfqG1+yCMP8DDgIdtSOS+nBhDQQ+pNOMmciWKf/F5UmInYiCSAA5FfdExWc4HURGpA2YQE3IlBTc4fvj7xeskfWNrU0zXTSnIkbLldFL54gelorswyz2pAx0gIvwFLXDNiM6zHVAAAAAASUVORK5CYII=" alt="github">
+                            </span>
+                            <span class="text">
+                                <strong>
+                                    GitHub
+                                </strong>
+                            </span>
+                            <span class="sr-only">- Si apre in una nuova finestra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/alessandro-uva/" 
+                           class="link-card"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="icon" aria-hidden="true">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAByElEQVR4nO2ZP0/CQBjG22scXI2Tiauy+glc3MC4+iX8DA6G9IiDJsYBBhdNHJwcNRGIHY3xjoBCgkTEAUP8A63yt7ymBVQEIq2mvSb3JM/UN5fnd+97N1wFgYuLi4tpSTJdQTKJI5lqCFNwxDLVRExjkkyW/xRexAQ7FhoPt4hJ0P7OuxwedS2FSMAygDk2DIRHRhdkGrUOgInqdnDUs0wqNgAYCI6//G8AvkgazgsaaA0dlIIG8+G0twCUggbfFb/XvAWgNfQ+ALWuewtA8XoHfJG0CWF0IpZXYS584y0A5JIFDoA7OzFM43yf3b2G7YsSpEpVqDbb8FprmaO4dvoAk5sJtgEW9jLw+NaEUbosvsPMTopdgOxLHX5TLK+CxCrAuPIf5dgE0Ntgzv/S4S2sHucheqcOrdtPPrMJsK4U+2omQgk4yVUG6jJPNTYBpreTA+ssHmQH6sq1FnsA7R/fe57aSo5d63oH7K6FOADmHTDFRwjzQ0z5LYT4NWpRo24Otyx4+mkR07JlAON9noHgYFjE9MwygPFzwe3gqGsJX/ktA3S6QIJuhxcx2bAV/rMTIRIw3uedPRNENcbG9s5zcXFxCU7pA5Jwntel+S2tAAAAAElFTkSuQmCC" alt="linkedin">
+                            </span>
+                            <span class="text">
+                                <strong>
+                                    LinkedIn
+                                </strong>
+                            </span>
+                            <span class="sr-only">- Si apre in una nuova finestra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://uva-alessandro.netlify.app/" 
+                           class="link-card"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="icon" aria-hidden="true">
+                                <img src="data:image/png;base64,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" alt="internet">
+                            </span>
+                            <span class="text">
+                                <strong>
+                                    Portfolio
+                                </strong>
+                            </span>
+                            <span class="sr-only">- Si apre in una nuova finestra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ko-fi.com/alessandrouva" 
+                           class="link-card"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <span class="icon" aria-hidden="true">
+                                <img src="data:image/png;base64,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" alt="ko-fi">
+                            </span>
+                            <span class="text">
+                                <strong>
+                                    Offrimi un caffè
+                                </strong>
+                            </span>
+                            <span class="sr-only">- Si apre in una nuova finestra</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
